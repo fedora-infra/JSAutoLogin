@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title>JSOpenID - Logged IN</title>
+
+        <script type="text/javascript" src="/static/jsopenid.js">
+        </script>
+
+        <script type="text/javascript">
+            function postLoginResult()
+            {
+                if( {{ success }} )
+                {
+                    respondToLogin(true, {"nickname": "{{ nickname }}",
+                                          "fullname": "{{ fullname }}",
+                                          "email": "{{ email }}"
+                                         }
+                                   );
+                }
+                else
+                {
+                    respondToLogin(false, {"error": "{{ error }}"});
+                }
+            }
+        </script>
+    </head>
+    <body onload="postLoginResult()">
+        <h1>This is also the normal loggedin page</h1>
+        <h2>Error: {{error}}</h2>
+    </body>
+</html>

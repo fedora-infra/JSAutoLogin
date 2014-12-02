@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <title>JSOpenID - TEST</title>
+
+        <script type="text/javascript" src="/static/jsopenid.js">
+        </script>
+
+        <script type="text/javascript">
+            function loginSuccess(userdata)
+            {
+                document.getElementById('loginstatus').innerHTML = 'Welcome, ' + userdata["fullname"];
+            }
+            function loginFailed(errordata)
+            {
+                document.getElementById('loginstatus').innerHTML += '<br />Could NOT auto-login: ' + errordata["error"];
+            }
+
+            var userdata = {{ userdata|tojson }};
+            function handleLogin()
+            {
+                if(userdata != null)
+                {
+                    // The user is currently logged in
+                    //  If this was a recursive auth attempt, report back
+                    document.getElementById('loginstatus').innerHTML = 'Welcome, ' + userdata["fullname"];
+                    respondToLogin(true, userdata);
+                }
+                else
+                {
+                    tryBackgroundLogin('/login?immediate=true', loginSuccess, loginFailed);
+                }
+            }
+        </script>
+    </head>
+    <body onLoad="handleLogin()">
+        <h1>Lets test this stuff!</h1>
+        <div id="loginstatus">
+            <a href="/login">Login here!</a>
+        </div>
+    </body>
+</html>
