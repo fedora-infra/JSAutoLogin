@@ -7,5 +7,5 @@ JavaScript library for single sign-on with OpenID
 Usage
 -----
 
-To use this, pleaes check the example code.
+To use this, please check the example code.
 More documentation is following shortly.
