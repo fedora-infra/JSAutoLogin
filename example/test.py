@@ -1,5 +1,4 @@
 # Copyright (c) 2014, Patrick Uiterwijk <patrick@puiterwijk.org>
-# All rights reserved.
 #
 # This file is part of JSAutoLogin.
 # This example code is licensed under the CC0 license.
