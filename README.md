@@ -1,7 +1,7 @@
-JSOpenID
+JSAutoLogin
 ========
 
-JavaScript library for single sign-on with OpenID
+JavaScript library for single sign-on
 
 
 Usage

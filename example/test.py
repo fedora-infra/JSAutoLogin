@@ -1,20 +1,13 @@
 # Copyright (c) 2014, Patrick Uiterwijk <patrick@puiterwijk.org>
 # All rights reserved.
 #
-# This file is part of Foobar.
+# This file is part of JSAutoLogin.
+# This example code is licensed under the CC0 license.
 #
-# Foobar is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# Foobar is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+# To the extent possible under law, Patrick Uiterwijk
+# has waived all copyright and related or neighboring
+# rights to JSAutoLogin.
+# This work is published from: the Netherlands.
 
 import flask
 import jinja2
