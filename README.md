@@ -4,7 +4,7 @@ JSAutoLogin
 JavaScript library for single sign-on
 
 
-What is does
+What it does
 ------------
 
 This JavaScript library is way to implement Single Signon
@@ -28,6 +28,14 @@ inside the hidden iFrame, after which it will call either the
 results (note that `callback_failed` is optional).
 In the `callback_success`, the page should update the DOM
 to indicate to the user he/she has been logged in.
+
+This library is designed to support the case where the
+user-visible page does not refresh after the login completed.
+To support this, any data that the user-visible page needs
+to update its user interface should be passed in the `data`
+argument to `respondToLogin`.
+If you don't want this, you could just pass `null` as `data`
+and have the callback_success refresh the page.
 
 Note:
 Because the login_url is loaded in a hidden iFrame, it should
@@ -75,6 +83,9 @@ one-to-one with the previously mentioned steps:
     message will be ignored by the browser. For testing purposes,
     this security function can be disabled by setting to '*'.
     WARNING: DO SET THIS IN PRODUCTION!
+    Exception: if you don't set any data in the `data` parameter,
+    there is no information to be leaked, so this can safely be
+    set to '*'.
     Example: 'http://myapp.example.com:8080'.
   `success`: (REQUIRED) A boolean whether or not login was successful.
   `data`: (OPTIONAL) Any data you want to send to the user-visible page.
