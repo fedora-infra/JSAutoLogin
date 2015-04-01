@@ -1,0 +1,32 @@
+<!doctype html>
+<!--
+# Written in 2014-2015, Patrick Uiterwijk <patrick@puiterwijk.org>
+# Written in 2015, Pierre-Yves Chibon <pingou@pingoured.fr>
+#
+# This file is part of JSAutoLogin Example Code.
+# This example code is licensed under the CC0 license.
+#
+# To the extent possible under law, the authors
+# have waived all copyright and related or neighboring
+# rights to JSAutoLogin Example Code.
+# This work is published from: the Netherlands, France.
+-->
+<html>
+    <head>
+        <title>JSAutoLogin - Login Error</title>
+
+        <script type="text/javascript" src="/static/jsautologin.js">
+        </script>
+
+        <script type="text/javascript">
+            function postLoginResult()
+            {
+                respondToLogin(false, {"error": "{{ error }}"});
+            }
+        </script>
+    </head>
+    <body onload="postLoginResult()">
+        <h1>This page is used internally to report an error</h1>
+        <h2>Error: {{error}}</h2>
+    </body>
+</html>

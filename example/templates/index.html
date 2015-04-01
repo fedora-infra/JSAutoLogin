@@ -1,14 +1,15 @@
 <!doctype html>
 <!--
-# Copyright (c) 2014, Patrick Uiterwijk <patrick@puiterwijk.org>
+# Written in 2014-2015, Patrick Uiterwijk <patrick@puiterwijk.org>
+# Written in 2015, Pierre-Yves Chibon <pingou@pingoured.fr>
 #
-# This file is part of JSAutoLogin.
+# This file is part of JSAutoLogin Example Code.
 # This example code is licensed under the CC0 license.
 #
-# To the extent possible under law, Patrick Uiterwijk
-# has waived all copyright and related or neighboring
-# rights to JSAutoLogin.
-# This work is published from: the Netherlands.
+# To the extent possible under law, the authors
+# have waived all copyright and related or neighboring
+# rights to JSAutoLogin Example Code.
+# This work is published from: the Netherlands, France.
 -->
 <html>
     <head>
@@ -35,7 +36,7 @@
                     // The user is currently logged in
                     //  If this was a recursive auth attempt, report back
                     document.getElementById('loginstatus').innerHTML = 'Welcome, ' + userdata["fullname"];
-                    respondToLogin(true, userdata);
+                    respondToLogin('{{ request.url_root }}', true, userdata);
                 }
                 else
                 {
